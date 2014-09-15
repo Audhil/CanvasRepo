@@ -54,4 +54,10 @@ public class ThirdActivity extends Activity {
 	public void NavigateToFourthActivity(View view) {
 		startActivity(new Intent(this,FourthActivity.class));
 	}
+	
+	@Override
+	protected void onDestroy() {
+		super.onDestroy();
+		myHandler.removeCallbacks(runnable);
+	}
 }
